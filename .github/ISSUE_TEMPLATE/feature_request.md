@@ -1,13 +1,13 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
-title: 'Feat: 이슈 내용 요약'
+about: feature request
+title: "Feat: 이슈 \b제목"
 labels: ''
 assignees: ''
 
 ---
 
-### 👻 Issue
+### 👻 Description
  <!-- 이슈에 대해 간략하게 설명해주세요 -->
 
 ### ☑️ Todo List (Optional)

@@ -1,6 +1,9 @@
+import UserListItemCard from "@/common/components/UserListItemCard";
 import { css } from "@emotion/react";
-import { Blockquote, Card, Checkbox, Heading } from "@radix-ui/themes";
+import styled from "@emotion/styled";
+import { Blockquote, Card, Checkbox, Flex, Heading, Radio, Text } from "@radix-ui/themes";
 import { version } from "react";
+import { Link } from "react-router";
 
 export default function MenuPage() {
   return (
@@ -12,6 +15,43 @@ export default function MenuPage() {
         heading
       </Heading>
       <Blockquote weight="bold">quote quote</Blockquote>
+
+      <UserListContainer>
+        <Flex direction="column" gap="2">
+          <UserListItemCard asChild>
+            <Link to="/">
+              <Flex>유저1</Flex>
+            </Link>
+          </UserListItemCard>
+
+          <UserListItemCard asChild>
+            <button type="button" onClick={() => console.log("here")}>
+              유저2
+            </button>
+          </UserListItemCard>
+
+          <UserListItemCard>
+            <Flex gap="3">
+              <Text as="label" size="2">
+                <Radio name="example" value="1" defaultChecked color="indigo" />
+                Default
+              </Text>
+
+              <Text as="label" size="2">
+                <Radio name="example" value="1" color="cyan" />
+                Comfortable
+              </Text>
+            </Flex>
+          </UserListItemCard>
+
+          <UserListItemCard>유저4</UserListItemCard>
+        </Flex>
+      </UserListContainer>
     </>
   );
 }
+
+const UserListContainer = styled.div({
+  width: "100vw",
+  padding: "10px",
+});

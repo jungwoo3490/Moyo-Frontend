@@ -5,7 +5,7 @@ type UserProfileAvatarProps = Omit<
   "radius" | "variant" | "color" | "fallback"
 >;
 
-const UserProfileAvatar = ({ ...props }: UserProfileAvatarProps) => {
+const UserProfileAvatar = (props: UserProfileAvatarProps) => {
   return (
     <Avatar
       radius="full"

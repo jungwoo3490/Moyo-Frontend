@@ -1,9 +1,9 @@
-import "@radix-ui/themes/styles.css";
 import Router from "@/Router";
 import { GlobalStyles } from "@/common/styles/GlobalStyles";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Theme } from "@radix-ui/themes";
+import "@radix-ui/themes/styles.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const queryClient = new QueryClient();
 
@@ -12,7 +12,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <GlobalStyles />
-      <Theme>
+      <Theme accentColor="indigo" grayColor="slate">
         <Router />
       </Theme>
     </QueryClientProvider>

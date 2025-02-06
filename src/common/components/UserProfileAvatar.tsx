@@ -1,3 +1,4 @@
+import { ImgUserProfile } from "@/assets/images";
 import { Avatar, type AvatarProps } from "@radix-ui/themes";
 
 type UserProfileAvatarProps = Omit<
@@ -11,7 +12,7 @@ const UserProfileAvatar = (props: UserProfileAvatarProps) => {
       radius="full"
       variant="soft"
       color="gray"
-      fallback={<>fallback image</>}
+      fallback={<img src={ImgUserProfile} alt="유저 프로필 이미지" />}
       {...props}
     />
   );

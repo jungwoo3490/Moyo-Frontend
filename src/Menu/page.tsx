@@ -1,3 +1,4 @@
+import Header from "@/common/components/Header";
 import UserListItemCard from "@/common/components/UserListItemCard";
 import UserProfileAvatar from "@/common/components/UserProfileAvatar";
 import { css } from "@emotion/react";
@@ -17,6 +18,11 @@ import { Link } from "react-router";
 export default function MenuPage() {
   return (
     <>
+      <Header
+        leftElement={"왼쪽"}
+        centerElement={"중앙"}
+        rightElement={"오른쪽"}
+      />
       {version}
       <Card variant="surface">menu</Card>
 
@@ -70,5 +76,5 @@ export default function MenuPage() {
 
 const UserListContainer = styled.div({
   width: "100vw",
-  padding: "10px",
+  padding: "1rem",
 });

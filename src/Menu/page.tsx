@@ -1,4 +1,5 @@
 import Header from "@/common/components/Header";
+import Spacer from "@/common/components/Spacer";
 import UserListItemCard from "@/common/components/UserListItemCard";
 import UserProfileAvatar from "@/common/components/UserProfileAvatar";
 import { css } from "@emotion/react";
@@ -18,11 +19,7 @@ import { Link } from "react-router";
 export default function MenuPage() {
   return (
     <>
-      <Header
-        leftElement={"왼쪽"}
-        centerElement={"중앙"}
-        rightElement={"오른쪽"}
-      />
+      <Header left={"왼쪽"} center={"중앙"} right={"오른쪽"} />
       {version}
       <Card variant="surface">menu</Card>
 
@@ -67,9 +64,26 @@ export default function MenuPage() {
         </Flex>
       </UserListContainer>
 
-      {/* fallback이 보여지는 케이스 -> 이미지 로딩 실패시 */}
-      <UserProfileAvatar size="9" />
-      <UserProfileAvatar src="https://picsum.photos/id/237/200/300" size="9" />
+      <div>
+        {/* fallback이 보여지는 케이스 -> 이미지 로딩 실패시 */}
+        <UserProfileAvatar size="9" />
+        {/* 세로 방향 spacing */}
+        <Spacer height={10} />
+        <UserProfileAvatar
+          src="https://picsum.photos/id/237/200/300"
+          size="9"
+        />
+      </div>
+      <div css={{ display: "flex" }}>
+        {/* fallback이 보여지는 케이스 -> 이미지 로딩 실패시 */}
+        <UserProfileAvatar size="9" />
+        {/* 가로 방향 spacing */}
+        <Spacer width={10} />
+        <UserProfileAvatar
+          src="https://picsum.photos/id/237/200/300"
+          size="9"
+        />
+      </div>
     </>
   );
 }

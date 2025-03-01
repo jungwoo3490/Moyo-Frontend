@@ -2,17 +2,11 @@ import Header from "@/common/components/Header";
 import Spacer from "@/common/components/Spacer";
 import UserListItemCard from "@/common/components/UserListItemCard";
 import UserProfileAvatar from "@/common/components/UserProfileAvatar";
+import { colors } from "@/common/styles/theme";
+import { rem } from "@/common/utils/rem";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import {
-  Blockquote,
-  Card,
-  Checkbox,
-  Flex,
-  Heading,
-  Radio,
-  Text,
-} from "@radix-ui/themes";
+import { Blockquote, Card, Checkbox, Flex, Heading, Radio, Text } from "@radix-ui/themes";
 import { version } from "react";
 import { Link } from "react-router";
 
@@ -69,20 +63,14 @@ export default function MenuPage() {
         <UserProfileAvatar size="9" />
         {/* 세로 방향 spacing */}
         <Spacer height={10} />
-        <UserProfileAvatar
-          src="https://picsum.photos/id/237/200/300"
-          size="9"
-        />
+        <UserProfileAvatar src="https://picsum.photos/id/237/200/300" size="9" />
       </div>
       <div css={{ display: "flex" }}>
         {/* fallback이 보여지는 케이스 -> 이미지 로딩 실패시 */}
         <UserProfileAvatar size="9" />
         {/* 가로 방향 spacing */}
         <Spacer width={10} />
-        <UserProfileAvatar
-          src="https://picsum.photos/id/237/200/300"
-          size="9"
-        />
+        <UserProfileAvatar src="https://picsum.photos/id/237/200/300" size="9" />
       </div>
     </>
   );
@@ -90,5 +78,7 @@ export default function MenuPage() {
 
 const UserListContainer = styled.div({
   width: "100vw",
-  padding: "1rem",
+  padding: rem(1),
+
+  backgroundColor: colors.main11,
 });

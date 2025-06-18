@@ -20,5 +20,10 @@
       "quoteStyle": "double",
       "trailingCommas": "es5"
     }
+  },
+  "json": {
+    "parser": {
+      "allowComments": true
+    }
   }
 }

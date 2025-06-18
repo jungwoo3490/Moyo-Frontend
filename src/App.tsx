@@ -1,5 +1,5 @@
-import { router } from "@/router";
 import { GlobalStyles } from "@/common/styles/GlobalStyles";
+import { router } from "@/router";
 import { Theme } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";

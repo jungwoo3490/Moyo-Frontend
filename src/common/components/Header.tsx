@@ -1,5 +1,5 @@
-import type { ReactElement } from "react";
 import styled from "@emotion/styled";
+import type { ReactElement } from "react";
 import { Z_INDEX } from "../constants/zIndex";
 
 interface HeaderProps {
@@ -12,9 +12,7 @@ function Header({ left, center, right }: HeaderProps) {
   return (
     <HeaderWrapper aria-label="페이지 헤더">
       <LeftElement>{left}</LeftElement>
-      <CenterElement as={typeof center === "string" ? "h1" : "div"}>
-        {center}
-      </CenterElement>
+      <CenterElement as={typeof center === "string" ? "h1" : "div"}>{center}</CenterElement>
       <RightElement>{right}</RightElement>
     </HeaderWrapper>
   );

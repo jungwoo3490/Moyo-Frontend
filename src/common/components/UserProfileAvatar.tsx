@@ -1,10 +1,7 @@
 import { ImgUserProfile } from "@/assets/images";
 import { Avatar, type AvatarProps } from "@radix-ui/themes";
 
-type UserProfileAvatarProps = Omit<
-  AvatarProps,
-  "radius" | "variant" | "color" | "fallback"
->;
+type UserProfileAvatarProps = Omit<AvatarProps, "radius" | "variant" | "color" | "fallback">;
 
 const UserProfileAvatar = (props: UserProfileAvatarProps) => {
   return (

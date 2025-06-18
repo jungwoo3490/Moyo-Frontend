@@ -1,8 +1,8 @@
+import fs from "node:fs";
 import react from "@vitejs/plugin-react-swc";
 import { defineConfig } from "vite";
-import tsconfigPaths from "vite-tsconfig-paths";
 import svgr from "vite-plugin-svgr";
-import fs from "node:fs";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 const LOCALHOST_KEY_PATH = "localhost-key.pem";
 const LOCALHOST_CERT_PATH = "localhost.pem";

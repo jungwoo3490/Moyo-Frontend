@@ -1,7 +1,7 @@
-import GlobalLayout from "@/common/components/GlobalLayout";
-import { authLoader } from "@/loaders/authLoader";
 import { LoginPage } from "@/Login/page";
 import MenuPage from "@/Menu/page";
+import GlobalLayout from "@/common/components/GlobalLayout";
+import { authLoader } from "@/loaders/authLoader";
 import { createBrowserRouter } from "react-router";
 
 export const router = createBrowserRouter([

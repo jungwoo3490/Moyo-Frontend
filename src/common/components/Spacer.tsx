@@ -1,6 +1,4 @@
-type SpacerProps =
-  | { width: number; height?: never }
-  | { width?: never; height: number };
+type SpacerProps = { width: number; height?: never } | { width?: never; height: number };
 
 /**
  * 지정된 너비 또는 높이를 가진 고정된 공간을 추가하는 Spacer 컴포넌트입니다

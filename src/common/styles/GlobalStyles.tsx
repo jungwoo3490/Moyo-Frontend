@@ -1,4 +1,5 @@
 import { reset } from "@/common/styles/reset";
+import { colors } from "@/common/styles/theme";
 import { Global, css } from "@emotion/react";
 import type { ReactElement } from "react";
 
@@ -18,6 +19,12 @@ const globalCss = css`
       BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
       "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
       "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    background-color: ${colors.gray3};
   }
 `;
 

@@ -1,10 +1,11 @@
 import { reissue } from "@/common/api/reissue";
 import { accessTokenStore } from "@/common/stores/accessTokenStore";
-import ky from "ky";
+import type { ApiResponse } from "@/common/types/api";
+import ky, { type Options } from "ky";
 import { redirect } from "react-router";
 
-export const apiClient = ky.create({
-  prefixUrl: import.meta.env.VITE_API_BASE_URL,
+const baseApiClient = ky.create({
+  prefixUrl: `${import.meta.env.VITE_API_BASE_URL}`,
   hooks: {
     beforeRequest: [
       (request) => {
@@ -24,7 +25,7 @@ export const apiClient = ky.create({
             } = await reissue();
             accessTokenStore.set(accessToken);
 
-            return apiClient(request);
+            return baseApiClient(request);
           } catch (e) {
             accessTokenStore.clear();
             return redirect("/login");
@@ -35,3 +36,15 @@ export const apiClient = ky.create({
     ],
   },
 });
+
+export const apiClient = {
+  get: <T>(url: string, options?: Options) => baseApiClient.get(url, options).json<ApiResponse<T>>(),
+
+  post: <T>(url: string, options?: Options) => baseApiClient.post(url, options).json<ApiResponse<T>>(),
+
+  put: <T>(url: string, options?: Options) => baseApiClient.put(url, options).json<ApiResponse<T>>(),
+
+  delete: <T>(url: string, options?: Options) => baseApiClient.delete(url, options).json<ApiResponse<T>>(),
+
+  patch: <T>(url: string, options?: Options) => baseApiClient.patch(url, options).json<ApiResponse<T>>(),
+};

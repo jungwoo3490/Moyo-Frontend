@@ -13,7 +13,7 @@ import { Link } from "react-router";
 export default function MenuPage() {
   return (
     <>
-      <Header left={"왼쪽"} center={"중앙"} right={"오른쪽"} />
+      <Header title={"중앙"} />
       {version}
       <Card variant="surface">menu</Card>
 

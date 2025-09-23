@@ -1,3 +1,4 @@
+import { FollowPage } from "@/Follow/page";
 import { LoginPage } from "@/Login/page";
 import MenuPage from "@/Menu/page";
 import GlobalLayout from "@/common/components/GlobalLayout";
@@ -19,6 +20,10 @@ export const router = createBrowserRouter([
           {
             path: "menu",
             element: <MenuPage />,
+          },
+          {
+            path: "follow",
+            element: <FollowPage />,
           },
         ],
       },

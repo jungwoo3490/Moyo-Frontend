@@ -13,9 +13,7 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "biome check"
-    ]
+    "*.{js,jsx,ts,tsx}": ["biome check"]
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

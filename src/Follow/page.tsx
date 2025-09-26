@@ -3,6 +3,7 @@ import { DetectTypeSelector } from "@/Follow/components/DetectTypeSelector";
 import { FollowList } from "@/Follow/components/FollowList";
 import { RefreshButton } from "@/Follow/components/RefreshButton";
 import { useQueryFollowDetect } from "@/Follow/hooks/apis/useQueryFollowDetect";
+import { BottomNav } from "@/common/components/BottomNav";
 import Header from "@/common/components/Header";
 import Spacer from "@/common/components/Spacer";
 import UserListItemCard from "@/common/components/UserListItemCard";
@@ -18,7 +19,11 @@ export function FollowPage() {
   const [selectedType, setSelectedType] = useState<FollowDetectType>("mutual");
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage } = useQueryFollowDetect(selectedType);
 
-  const observerRef = useInfiniteScroll({ fetchNextPage, hasNextPage, isFetchingNextPage });
+  const observerRef = useInfiniteScroll({
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+  });
 
   return (
     <>
@@ -82,6 +87,7 @@ export function FollowPage() {
           </Flex>
         )}
       </Container>
+      <BottomNav />
     </>
   );
 }

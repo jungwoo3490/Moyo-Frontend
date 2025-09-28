@@ -9,7 +9,7 @@ export function LoginPage() {
   return (
     <Container>
       <BackgroundVideo autoPlay muted loop>
-        <source src="src/assets/videos/login_background.mp4" type="video/mp4" />
+        <source src="/videos/login_background.mp4" type="video/mp4" />
       </BackgroundVideo>
 
       <TextContainer>
